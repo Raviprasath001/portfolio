@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raviprasath Murugan | Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0.5rem 0;
+    }
+
+    .header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f39c12;
+    }
+
+    .logo span {
+      color: #f39c12;
+	  font-size: 30px;
+    }
+.logo {
+	  font-size: 30px;
+    }
+    .hero {
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      background: linear-gradient(to right, #34495e, #2c3e50);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #f39c12;
+      color: white;
+      text-decoration: none;
+      margin-top: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-size: 1.1rem;
+    }
+
+    .cta-button:hover {
+      background: #e67e22;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      background: white;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+	     display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      padding: 0.8rem 2rem;
+      background: #f39c12;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-size: 1.1rem;
+    }
+
+    .contact-form button:hover {
+      background: #e67e22;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #2c3e50;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Animation */
+    .section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">R<span>V</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm <span class="highlight">Raviprasath Murugan</span></h1>
+    <p>Full Stack Developer | Cloud Enthusiast | Security Specialist</p>
+    <a href="#contact" class="cta-button">Let's Connect</a>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>
+      I am an experienced Full Stack Developer with 3.7 years of expertise in designing scalable, secure, and responsive web applications.
+      Proficient in Java, Angular, AWS services, and security tools like OKTA, I have a strong passion for solving challenges and delivering impactful solutions.
+    </p>
+  </section>
+
+<section id="skills" class="section skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo" width="40">
+    </div>
+    <div class="skill">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript Logo" width="40">
+      <span>&nbsp;TypeScript</span>
+    </div>
+    <div class="skill">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular Logo" width="40">
+      <span>&nbsp;Angular</span>
+    </div>
+    <div class="skill">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Spring Boot Logo" width="40">
+      <span>&nbsp;Spring Boot</span>
+    </div>
+    <div class="skill">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" width="40">
+    </div>
+    <div class="skill">
+      <img   style="width: 100px;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMOITHzw31fiWEfp5wi6oJTtE7tAlQCPKaQg&s" alt="DynamoDB Logo" width="40">
+    </div>
+    <div class="skill">
+      <img style="width: 80px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTim1VS0Gbjyf-VP5p14S_bi0fvHFSJreBag&s" alt="OKTA Logo" width="40">
+    </div>
+    <div class="skill">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker Logo" width="40">
+      <span>&nbsp;Docker</span>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3>Payment Processing System</h3>
+        <p>
+          Overhauled the payment architecture, integrating Angular 17 with Spring Boot microservices. Boosted server response times by 20%
+          and introduced secure, seamless workflows for document uploads to AWS S3 with fault-tolerant mechanisms.
+        </p>
+      </div>
+      <div class="project">
+        <h3>Claim Inspection Engine</h3>
+        <p>
+          Designed a microservice-based solution to analyze insurance claims. Reduced false positives by 20%, integrated OKTA for enhanced
+          security, and streamlined image uploads to AWS S3 for high reliability.
+        </p>
+      </div>
+      <div class="project">
+        <h3>Pairrit</h3>
+        <p>
+          Created a secure, scalable web application architecture using AWS services. Integrated OKTA for user authentication and AWS CloudFront for secure object delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Raviprasath Murugan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.section').forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
